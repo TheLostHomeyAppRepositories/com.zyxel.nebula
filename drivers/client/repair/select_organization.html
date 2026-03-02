@@ -12,14 +12,14 @@
     <fieldset id="selectFieldset" class="homey-form-fieldset">
       <legend class="homey-form-legend" data-i18n="pair.select"></legend>
     </fieldset>
-    <p id="nolinks" class="error" data-i18n="pair.nolinks"></p>
+    <p id="no_orgs" class="error" data-i18n="pair.no-orgs"></p>
     <p id="failed" class="error" data-i18n="pair.error"></p>
 
     <button id="save" class="homey-button-primary-full" data-i18n="settings.save" onclick="saveClicked()">Save</button>
     <script type="text/javascript">
       const failedElement = document.getElementById('failed');
       const saveButton = document.getElementById('save');
-      const noLinksError = document.getElementById('nolinks');
+      const noOrgsError = document.getElementById('no_orgs');
       const fieldset = document.getElementById('selectFieldset');
       let selected;
       failedElement.style.display = 'none';
@@ -32,7 +32,6 @@
           saveButton.className = 'homey-button-primary-full is-loading';
           saveButton.textContent = Homey.__('pair.saving');
         }
-        console.log('Requesting links from driver');
         Homey.emit("getOrgs", { test : "" }).then(function (result) {
           if (result === false) {
             failedElement.style.display = 'block';
@@ -40,7 +39,7 @@
             return;
           }
           if (result.error) {
-            noLinksError.style.display = 'block';
+            noOrgsError.style.display = 'block';
             saveButton.style.display = 'none';
             return;
           }

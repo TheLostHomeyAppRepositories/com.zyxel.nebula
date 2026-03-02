@@ -8,10 +8,11 @@
     "noinput": "Please enter an API Key",
     "info": "Go to nebula.zyxel.com, click the 3 dots in the top right corner and go to the My devices & services menu. Click on NCC OpenAPI Key and paste the key that's generated in the field below.",
     "subscription": "Note: A Nebula Pro Pack subscription is required to use this app!",
-    "nolinks": "You don't have any organizations",
+    "no-orgs": "You don't have any organizations",
     "error": "Something went wrong",
     "select": "Select your organization",
     "selectsite": "Select your site",
-    "nosites": "You don't have any sites"
+    "nosites": "You don't have any sites",
+    "nolinks": "You don't have any organizations"
   }
 }

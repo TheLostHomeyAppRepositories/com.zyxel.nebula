@@ -2,7 +2,6 @@
     "pair": {
         "save": "Save",
         "saving": "Saving",
-        "title": "Zyxel Nebula",
         "key": "API Key",
         "failed": "Invalid API Key",
         "info": "Go to nebula.zyxel.com, click the 3 dots in the top right corner and go to the My devices & services menu. Click on NCC OpenAPI Key and paste the key that's generated in the field below.",
