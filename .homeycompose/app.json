@@ -16,6 +16,44 @@
   "category": [
     "internet"
   ],
+  "tags": {
+    "en": [
+      "nwa30be",
+      "nwa50ax",
+      "nwa50be",
+      "nwa50be",
+      "nwa55axe",
+      "nwa90",
+      "nwa90ax",
+      "nwa90be",
+      "nwa110ax",
+      "nwa110be",
+      "nwa130be",
+      "nwa220ax",
+      "nwa1123ac-pro",
+      "wbe630s",
+      "wax630s",
+      "iap500be"
+    ],
+    "nl": [
+      "nwa30be",
+      "nwa50ax",
+      "nwa50be",
+      "nwa50be",
+      "nwa55axe",
+      "nwa90",
+      "nwa90ax",
+      "nwa90be",
+      "nwa110ax",
+      "nwa110be",
+      "nwa130be",
+      "nwa220ax",
+      "nwa1123ac-pro",
+      "wbe630s",
+      "wax630s",
+      "iap500be"
+    ]
+  },
   "permissions": [],
   "brandColor": "#6caa25",
   "source": "https://github.com/smarthomesven/homey-zyxel-nebula",
