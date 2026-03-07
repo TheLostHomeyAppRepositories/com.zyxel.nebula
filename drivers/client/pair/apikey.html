@@ -22,38 +22,39 @@
 
     <p class="error" id="failed" style="display: none;" data-i18n="pair.failed">Invalid API Key</p>
     <p class="error" id="noinput" style="display: none;" data-i18n="pair.noinput">Please enter an API Key</p>
-    <button id="save" class="homey-button-primary-full" data-i18n="settings.save">Save</button>
+    <button id="save" class="homey-button-primary-full" data-i18n="pair.save">Save</button>
     <script type="text/javascript">
       const keyElement = document.getElementById('apikey');
       const errorElement = document.getElementById('failed');
       const saveElement = document.getElementById('save');
       const noInputElement = document.getElementById('noinput');
-        saveElement.addEventListener("click", function (e) {
-          setSaving();
-          errorElement.style.display = 'none';
-          noInputElement.style.display = 'none';
-          const key = keyElement.value;
-          if (!key) {
-            noInputElement.style.display = 'block';
+      saveElement.addEventListener("click", function (e) {
+        setSaving();
+        errorElement.style.display = 'none';
+        noInputElement.style.display = 'none';
+        const key = keyElement.value;
+        if (!key) {
+          noInputElement.style.display = 'block';
+          setSave();
+          return;
+        }
+        Homey.emit("apikey", { apikey: key  }).then(function (result) {
+          if (result === false) {
+            errorElement.style.display = 'block';
             setSave();
-            return;
           }
-          Homey.emit("apikey", { apikey: key  }).then(function (result) {
-            if (result === false) {
-              errorElement.style.display = 'block';
-              setSave();
-            }
-          });
         });
-        function setSave() {
-          saveElement.className = 'homey-button-primary-full';
-          saveElement.textContent = Homey.__('pair.save');
-        }
-
-        function setSaving() {
-          saveElement.className = 'homey-button-primary-full is-loading';
-          saveElement.textContent = Homey.__('pair.saving');
-        }
+      });
+      function setSave() {
+        saveElement.className = 'homey-button-primary-full';
+        saveElement.textContent = Homey.__('pair.save');
+        keyElement.disabled = false;
+      }
+      function setSaving() {
+        saveElement.className = 'homey-button-primary-full is-loading';
+        saveElement.textContent = Homey.__('pair.saving');
+        keyElement.disabled = true;
+      }
     </script>
   </body>
 </html>
