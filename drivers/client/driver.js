@@ -200,16 +200,7 @@ module.exports = class ClientDriver extends Homey.Driver {
 
   async onRepair(session) {
     session.setHandler("showView", async (viewId) => {
-      if (viewId === 'apikey') {
-        try {
-          const key = this.homey.settings.get('apikey');
-          if (key) {
-            await session.showView('select_organization');
-          }
-        } catch (error) {
-          throw new Error("Error while checking API key in storage: " + error.message);
-        }
-      } else if (viewId === 'select_organization') {
+      if (viewId === 'select_organization') {
         try {
           const apikey = this.homey.settings.get('apikey');
           if (apikey) {
